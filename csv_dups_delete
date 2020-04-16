@@ -1,0 +1,16 @@
+import os
+# Read in the original and new file
+orig = open(r"C:\Users\aendel\Desktop\Powershell\Every2008servers.csv",'r')
+new = open(r"C:\Users\aendel\Desktop\Powershell\clusters.csv",'r')
+#in new but not in orig
+bigb = set(orig) - set(new)
+# To see results in console if desired
+print(bigb)
+# Write to output file
+with open('answer.csv', 'w') as file_out:
+    for line in bigb:
+        file_out.write(line)
+#close the files
+orig.close()
+new.close()
+file_out.close()a
